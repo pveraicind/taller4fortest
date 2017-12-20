@@ -26,7 +26,7 @@ public class BuscarRegistro {
             ResultSet resultado = null;
             int eje = 0;
             
-            String query3 = "select idventa from clientegp ";
+            String query3 = "select idventa from venta ";
             Connection test=Conexion.conectar();
             Statement dec=test.createStatement();
             resultado=dec.executeQuery(query3);
@@ -49,7 +49,7 @@ public class BuscarRegistro {
     
     }
     
-     public Boolean buscarventa(Venta venta){
+     public Boolean buscarproducto(Producto producto){
      Boolean estado = false;
         try {
            
