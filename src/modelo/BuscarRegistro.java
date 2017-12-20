@@ -11,4 +11,6 @@ package modelo;
  */
 public class BuscarRegistro {
     
+    
+    
 }

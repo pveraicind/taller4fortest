@@ -11,4 +11,13 @@ package modelo;
  */
 public class Venta {
     
+    private int idventa;
+    private String fechacontratacion;
+    private String fechaterminopcional;
+    private String fechaterminocontrato;
+    private int tipoventa;
+    private int valorventa;
+    private String rut;
+  
+    
 }
