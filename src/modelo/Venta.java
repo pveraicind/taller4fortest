@@ -18,6 +18,8 @@ public class Venta {
     private int tipoventa;
     private int valorventa;
     private String rut;
+    private String nombretipo;
+    private String nombreproducto;
 
     public int getIdventa() {
         return idventa;

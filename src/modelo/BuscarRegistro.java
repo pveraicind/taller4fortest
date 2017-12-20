@@ -26,13 +26,13 @@ public class BuscarRegistro {
             ResultSet resultado = null;
             int eje = 0;
             
-            String query3 = "select idventa from venta ";
+            String query3 = "select * from venta where id_venta ="+venta.getIdventa();
             Connection test=Conexion.conectar();
             Statement dec=test.createStatement();
             resultado=dec.executeQuery(query3);
             
             while (resultado.next() && eje ==0){
-                int id2 = resultado.getInt("id");
+                int id2 = resultado.getInt("id_venta");
                 if (id2 == venta.getIdventa()){
                     estado = true;
                     eje = 1;
@@ -56,14 +56,14 @@ public class BuscarRegistro {
             ResultSet resultado = null;
             int eje = 0;
             
-            String query3 = "select idventa from clientegp ";
+            String query3 = "select id_producto from producto ";
             Connection test=Conexion.conectar();
             Statement dec=test.createStatement();
             resultado=dec.executeQuery(query3);
             
             while (resultado.next() && eje ==0){
-                int id2 = resultado.getInt("id");
-                if (id2 == venta.getIdventa()){
+                int id2 = resultado.getInt("id_producto");
+                if (id2 == producto.getId_producto()){
                     estado = true;
                     eje = 1;
                 }
