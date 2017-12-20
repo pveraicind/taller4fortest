@@ -5,10 +5,37 @@
  */
 package modelo;
 
+import db.Conexion;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
 /**
  *
  * @author Gabriel
  */
 public class ListarModelo {
+
+    public ArrayList listar(){
+        ResultSet resultSet = null;
+        String sql="SELECT ";
+        try {
+            
+            PreparedStatement preparedStatement = Conexion.conectar().prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();        
+           
+            
+            
+        } catch (SQLException ex) {
+            
+        }        
+        
+        
+        
+        return resultSet;
+    }
+
+
     
 }
