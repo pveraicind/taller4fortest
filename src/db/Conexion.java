@@ -20,9 +20,9 @@ public class Conexion {
     }
     public static Connection conectar(){
         if (conect==null){
-             String url= "jdbc:oracle:thin:@localhost:1521:xe";
-             String user="HR";
-             String pass="123456";
+             String url= "jdbc:oracle:thin:@MSP-PM-04-07.aws.smartcloud.cl:1521:xe";
+             String user="usuario07";
+             String pass="usuario07";
              System.out.println("Proceso de Conexión...");
              
              try {

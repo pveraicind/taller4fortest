@@ -5,10 +5,16 @@
  */
 package controlador;
 
+import java.util.ArrayList;
+import modelo.ListarModelo;
+
 /**
  *
  * @author Gabriel
  */
 public class ListarControlador {
-    
+    public ArrayList listar(){
+        ListarModelo listarModelo = new ListarModelo();
+        return listarModelo.listar();
+    }    
 }
