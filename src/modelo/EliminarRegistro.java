@@ -23,7 +23,7 @@ public class EliminarRegistro {
       ResultSet resultado = null;
        Boolean bolita = false;
         try {
-            String query1 = "delete from venta where id="+venta.getIdventa();
+            String query1 = "delete from venta where id_venta="+venta.getIdventa();
             Connection test=Conexion.conectar();
             Statement dec=test.createStatement();
             resultado=dec.executeQuery(query1);
@@ -41,7 +41,24 @@ public class EliminarRegistro {
       ResultSet resultado = null;
        Boolean bolita = false;
         try {
-            String query1 = "delete from producto where id="+producto.getId_producto();
+            String query1 = "delete from producto where id_producto="+producto.getId_producto();
+            Connection test=Conexion.conectar();
+            Statement dec=test.createStatement();
+            resultado=dec.executeQuery(query1);
+            bolita = true;
+            
+        } catch (SQLException ex) {
+            bolita = false;                        
+            Logger.getLogger(EliminarRegistro.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return bolita;
+    
+    }  
+            public Boolean eliminarventadetalle1(Producto producto){
+      ResultSet resultado = null;
+       Boolean bolita = false;
+        try {
+            String query1 = "delete from relation_2v1 where id_producto="+producto.getId_producto();
             Connection test=Conexion.conectar();
             Statement dec=test.createStatement();
             resultado=dec.executeQuery(query1);
@@ -55,5 +72,24 @@ public class EliminarRegistro {
     
     }  
     
+            
+            public Boolean eliminardetalle2(Venta venta){
+      ResultSet resultado = null;
+       Boolean bolita = false;
+        try {
+            String query1 = "delete from relation_2v1 where id_venta="+venta.getIdventa();
+            Connection test=Conexion.conectar();
+            Statement dec=test.createStatement();
+            resultado=dec.executeQuery(query1);
+            bolita = true;
+            
+        } catch (SQLException ex) {
+            bolita = false;                        
+            Logger.getLogger(EliminarRegistro.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return bolita;
     
+    }         
+            
+            
 }

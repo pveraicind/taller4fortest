@@ -39,6 +39,9 @@ public class Venta {
         this.precioXcantidad = precioXcantidad;
     }
 
+    public Venta() {
+    }
+
     
     
     
