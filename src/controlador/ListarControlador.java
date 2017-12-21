@@ -17,8 +17,8 @@ public class ListarControlador {
         ListarModelo listarModelo = new ListarModelo();
         return listarModelo.listar();
     }  
-    public ArrayList listarDetalleVenta(){
+    public ArrayList listarDetalleVenta(int id){
         ListarModelo listarModelo = new ListarModelo();
-        return listarModelo.listarDetalleVenta();        
+        return listarModelo.listarDetalleVenta(id);        
     }    
 }

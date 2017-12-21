@@ -17,7 +17,7 @@ import java.util.ArrayList;
  */
 public class ListarModelo {
 
-    public ArrayList listarDetalleVenta(){
+    public ArrayList listarDetalleVenta(int id){
         ResultSet resultSet = null;
     int idventa;
     String fechacontratacion;
@@ -34,7 +34,7 @@ public class ListarModelo {
         
         
         ArrayList <Venta> list = new ArrayList<>();
-        String sql="SELECT VENTA.ID_VENTA, PRODUCTO.NOMBRE_PRODUCTO, PRODUCTO.PRECIO, RELATION_2V1.CANTIDAD, RELATION_2V1.PRECIO FROM VENTA JOIN RELATION_2V1 ON RELATION_2V1.VENTA_ID_VENTA=VENTA.ID_VENTA JOIN PRODUCTO ON RELATION_2V1.PRODUCTO_ID_PRODUCTO=PRODUCTO.ID_PRODUCTO";
+        String sql="SELECT VENTA.ID_VENTA, PRODUCTO.NOMBRE_PRODUCTO, PRODUCTO.PRECIO, RELATION_2V1.CANTIDAD, RELATION_2V1.PRECIO FROM VENTA JOIN RELATION_2V1 ON RELATION_2V1.VENTA_ID_VENTA=VENTA.ID_VENTA JOIN PRODUCTO ON RELATION_2V1.PRODUCTO_ID_PRODUCTO=PRODUCTO.ID_PRODUCTO WHERE VENTA.ID_VENTA="+id;
         try {
             
             PreparedStatement preparedStatement = Conexion.conectar().prepareStatement(sql);
