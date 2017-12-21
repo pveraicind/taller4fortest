@@ -26,7 +26,7 @@ public class BuscarRegistro {
             ResultSet resultado = null;
             int eje = 0;
             
-            String query3 = "select * from venta where id_venta ="+venta.getIdventa();
+            String query3 = "select id_venta from venta";
             Connection test=Conexion.conectar();
             Statement dec=test.createStatement();
             resultado=dec.executeQuery(query3);
@@ -56,7 +56,10 @@ public class BuscarRegistro {
             ResultSet resultado = null;
             int eje = 0;
             
+
             String query3 = "select idproducto from producto ";
+
+
             Connection test=Conexion.conectar();
             Statement dec=test.createStatement();
             resultado=dec.executeQuery(query3);
@@ -83,7 +86,7 @@ public class BuscarRegistro {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-    
+
     
     
 }
