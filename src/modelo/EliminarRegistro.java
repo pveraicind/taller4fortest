@@ -18,6 +18,10 @@ import java.util.logging.Logger;
  * @author Gabriel
  */
 public class EliminarRegistro {
+
+    public void setVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
         public Boolean eliminarventa(Venta venta){
       ResultSet resultado = null;
@@ -58,7 +62,7 @@ public class EliminarRegistro {
       ResultSet resultado = null;
        Boolean bolita = false;
         try {
-           int hola = producto.getId_producto();
+           Integer hola = producto.getIdproducto();
             String query1 = "delete from relation_2v1 where producto_id_producto="+hola;
             Connection test=Conexion.conectar();
             Statement dec=test.createStatement();

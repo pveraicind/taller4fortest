@@ -23,6 +23,27 @@ public class Venta {
     private int cantidad;
     private int precioUnitario;
     private int precioXcantidad;
+   
+    
+    public Venta(int idventa, String nombreproducto,  int precioUnitario, int cantidad, int precioXcantidad) {
+        this.idventa = idventa;
+        this.nombreproducto = nombreproducto;
+        this.cantidad = cantidad;
+        this.precioUnitario = precioUnitario;
+        this.precioXcantidad = precioXcantidad;
+    }
+    
+
+
+    public Venta(int idventa, String fechacontratacion, String fechaterminopcional, String fechaterminocontrato, String nombretipo, int valorventa, String rut) {
+        this.idventa = idventa;
+        this.fechacontratacion = fechacontratacion;
+        this.fechaterminopcional = fechaterminopcional;
+        this.fechaterminocontrato = fechaterminocontrato;
+        this.valorventa = valorventa;
+        this.rut = rut;
+        this.nombretipo = nombretipo;
+    }
 
     public Venta(int idventa, String fechacontratacion, String fechaterminopcional, String fechaterminocontrato, int tipoventa, int valorventa, String rut, String nombretipo, String nombreproducto, int cantidad, int precioUnitario, int precioXcantidad) {
         this.idventa = idventa;

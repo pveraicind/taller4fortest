@@ -10,33 +10,33 @@ package modelo;
  * @author USUARIO
  */
 public class Producto {
-    private int id_producto;
-    private String nombre_producto;
+    private Integer idproducto;
+    private String nombreproducto;
     private Integer precio;
 
     public Producto() {
     }
 
-    public Producto(Integer id_producto, String nombre_producto, Integer precio) {
-        this.id_producto = id_producto;
-        this.nombre_producto = nombre_producto;
+    public Producto(Integer idproducto, String nombreproducto, Integer precio) {
+        this.idproducto = idproducto;
+        this.nombreproducto = nombreproducto;
         this.precio = precio;
     }
 
-    public Integer getId_producto() {
-        return id_producto;
+    public Integer getIdproducto() {
+        return idproducto;
     }
 
-    public void setId_producto(Integer id_producto) {
-        this.id_producto = id_producto;
+    public void setIdproducto(Integer idproducto) {
+        this.idproducto = idproducto;
     }
 
-    public String getNombre_producto() {
-        return nombre_producto;
+    public String getNombreproducto() {
+        return nombreproducto;
     }
 
-    public void setNombre_producto(String nombre_producto) {
-        this.nombre_producto = nombre_producto;
+    public void setNombreproducto(String nombreproducto) {
+        this.nombreproducto = nombreproducto;
     }
 
     public Integer getPrecio() {
@@ -46,6 +46,10 @@ public class Producto {
     public void setPrecio(Integer precio) {
         this.precio = precio;
     }
-    
-    
-}
+
+    String getId_producto() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    }
+ 

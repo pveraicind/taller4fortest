@@ -161,8 +161,8 @@ public class EliminarVista extends javax.swing.JFrame {
         Producto producto = new Producto ();
         Venta venta = new Venta ();
         if(this.elimprod.isSelected()){
-            producto.setId_producto(Integer.parseInt(this.idprod.getText()));
-            System.out.println(producto.getId_producto());
+            producto.setIdproducto(Integer.parseInt(this.idprod.getText()));
+            System.out.println(producto.getIdproducto());
             elim.eliminardet1(producto);
            elim.eliminarprod(producto);
         
@@ -173,7 +173,7 @@ public class EliminarVista extends javax.swing.JFrame {
       
         }else if (this.elimdet.isSelected()){
         
-        producto.setId_producto(Integer.parseInt(this.idprod.getText()));
+        producto.setIdproducto(Integer.parseInt(this.idprod.getText()));
         venta.setIdventa(Integer.parseInt(this.idventa.getText()));
         elim.eliminardet3(venta, producto);
         
