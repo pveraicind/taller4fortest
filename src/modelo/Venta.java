@@ -60,6 +60,9 @@ public class Venta {
         this.precioXcantidad = precioXcantidad;
     }
 
+    public Venta() {
+    }
+
     
     
     
@@ -101,6 +104,22 @@ public class Venta {
     
 
 
+
+    public String getNombretipo() {
+        return nombretipo;
+    }
+
+    public void setNombretipo(String nombretipo) {
+        this.nombretipo = nombretipo;
+    }
+
+    public String getNombreproducto() {
+        return nombreproducto;
+    }
+
+    public void setNombreproducto(String nombreproducto) {
+        this.nombreproducto = nombreproducto;
+    }
 
     public int getIdventa() {
         return idventa;
@@ -158,35 +177,7 @@ public class Venta {
         this.rut = rut;
     }
 
-    /**
-     * @return the nombretipo
-     */
-    public String getNombretipo() {
-        return nombretipo;
-    }
 
-    /**
-     * @param nombretipo the nombretipo to set
-     */
-    public void setNombretipo(String nombretipo) {
-        this.nombretipo = nombretipo;
-    }
-
-    /**
-     * @return the nombreproducto
-     */
-    public String getNombreproducto() {
-        return nombreproducto;
-    }
-
-    /**
-     * @param nombreproducto the nombreproducto to set
-     */
-    public void setNombreproducto(String nombreproducto) {
-        this.nombreproducto = nombreproducto;
-    }
-  
-    
     
     
 }
