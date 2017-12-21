@@ -19,12 +19,28 @@ public class ListarModelo {
 
     public ArrayList listar(){
         ResultSet resultSet = null;
+        int idventa;
+        String fechacontratacion;
+        String fechaterminopcional;
+        String fechaterminocontrato;
+        String nombretipo;
+        int valorventa;
+        int tipoventa;
+        
+        String rut;
+        
+        String nombreproducto;
+        
+        
+        ArrayList <Venta> list = new ArrayList<>();
         String sql="SELECT VENTA.ID_VENTA, VENTA.FECHA_CONTRATACION, VENTA.FECHA_TERMINO_OPCIONAL, VENTA.FECHA_TERMINO_CONTRATO, TIPO_VENTA.NOMBRE_TIPO, VENTA.VALOR_VENTA, VENTA.RUT, PRODUCTO.NOMBRE_PRODUCTO, PRODUCTO.PRECIO, RELATION_2V1.CANTIDAD, RELATION_2V1.PRECIO FROM VENTA JOIN TIPO_VENTA ON VENTA.TIPO_VENTA_ID_TIPO=TIPO_VENTA.ID_TIPO JOIN RELATION_2V1 ON RELATION_2V1.VENTA_ID_VENTA=VENTA.ID_VENTA JOIN PRODUCTO ON RELATION_2V1.PRODUCTO_ID_PRODUCTO=PRODUCTO.ID_PRODUCTO";
         try {
             
             PreparedStatement preparedStatement = Conexion.conectar().prepareStatement(sql);
             resultSet = preparedStatement.executeQuery();        
-           
+            while (resultSet.next()) {
+                
+            }
             
             
         } catch (SQLException ex) {
@@ -33,7 +49,7 @@ public class ListarModelo {
         
         
         
-        return resultSet;
+        return list;
     }
 
 
