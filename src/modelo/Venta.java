@@ -20,6 +20,66 @@ public class Venta {
     private String rut;
     private String nombretipo;
     private String nombreproducto;
+    private int cantidad;
+    private int precioUnitario;
+    private int precioXcantidad;
+
+    public Venta(int idventa, String fechacontratacion, String fechaterminopcional, String fechaterminocontrato, int tipoventa, int valorventa, String rut, String nombretipo, String nombreproducto, int cantidad, int precioUnitario, int precioXcantidad) {
+        this.idventa = idventa;
+        this.fechacontratacion = fechacontratacion;
+        this.fechaterminopcional = fechaterminopcional;
+        this.fechaterminocontrato = fechaterminocontrato;
+        this.tipoventa = tipoventa;
+        this.valorventa = valorventa;
+        this.rut = rut;
+        this.nombretipo = nombretipo;
+        this.nombreproducto = nombreproducto;
+        this.cantidad = cantidad;
+        this.precioUnitario = precioUnitario;
+        this.precioXcantidad = precioXcantidad;
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    public void setCantidad(int cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public void setPrecioUnitario(int precioUnitario) {
+        this.precioUnitario = precioUnitario;
+    }
+
+    public void setPrecioXcantidad(int precioXcantidad) {
+        this.precioXcantidad = precioXcantidad;
+    }
+
+    
+    
+    
+    
+    
+    public int getCantidad() {
+        return cantidad;
+    }
+
+    public int getPrecioUnitario() {
+        return precioUnitario;
+    }
+
+    public int getPrecioXcantidad() {
+        return precioXcantidad;
+    }
+    
+    
+    
+    
+
+
 
     public int getIdventa() {
         return idventa;
@@ -75,6 +135,34 @@ public class Venta {
 
     public void setRut(String rut) {
         this.rut = rut;
+    }
+
+    /**
+     * @return the nombretipo
+     */
+    public String getNombretipo() {
+        return nombretipo;
+    }
+
+    /**
+     * @param nombretipo the nombretipo to set
+     */
+    public void setNombretipo(String nombretipo) {
+        this.nombretipo = nombretipo;
+    }
+
+    /**
+     * @return the nombreproducto
+     */
+    public String getNombreproducto() {
+        return nombreproducto;
+    }
+
+    /**
+     * @param nombreproducto the nombreproducto to set
+     */
+    public void setNombreproducto(String nombreproducto) {
+        this.nombreproducto = nombreproducto;
     }
   
     
