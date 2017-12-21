@@ -16,6 +16,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import controlador.ListarControlador;
+import modelo.BuscarRegistro;
 import modelo.Venta;
 
 /**
@@ -43,7 +44,6 @@ public class DetalleVentaVista extends javax.swing.JFrame {
         defaultTableModel.addColumn("PRECIOxCANT");
         jTable1.setModel(defaultTableModel);
         regCon= new ListarControlador();
-        lista();
         
            
     }
@@ -55,31 +55,35 @@ public class DetalleVentaVista extends javax.swing.JFrame {
         while(defaultTableModel.getRowCount()>0)defaultTableModel.removeRow(0);
         
         ArrayList <Venta> semis =regCon.listar();
+        int codigo = 0;
+        try {
+            codigo = Integer.parseInt(jCodigoBuscar.getText());
+        } catch (NumberFormatException numberFormatException) {
+        }
+        Venta venta = new Venta();
+        venta.setIdventa(codigo);
+        BuscarRegistro busReg = new BuscarRegistro();
         
-        
-        Iterator <Venta> xx = semis.iterator();
-        while(xx.hasNext()){
-            Venta se=xx.next();
-            
-            
-                fila[0]= se.getIdventa();
-                fila[1]= se.getFechacontratacion();
-                fila[2]= se.getFechaterminopcional();
-                fila[3]= se.getFechaterminocontrato();
-                fila[4]= se.getNombretipo();
-                fila[5]= se.getValorventa();
-                fila[6]= se.getRut();
-                /*
-                fila[7]= se.getNombreproducto();
-                fila[8]= se.getPrecioUnitario();
-                fila[9]= se.getCantidad();
-                fila[10]= se.getPrecioXcantidad();*/
-           
+        if(busReg.buscarventa(venta)){
+            Iterator <Venta> xx = semis.iterator();
+            while(xx.hasNext()){
+                Venta se=xx.next();
 
-            defaultTableModel.addRow(fila);            
-            
-        }          
-        jTable1.updateUI();          
+                    fila[0]= se.getIdventa();
+                    fila[1]= se.getNombreproducto();
+                    fila[2]= se.getPrecioUnitario();
+                    fila[3]= se.getCantidad();
+                    fila[4]= se.getPrecioXcantidad(); 
+
+
+
+                defaultTableModel.addRow(fila);            
+
+            }          
+            jTable1.updateUI();             
+        }        
+        
+         
     }
     
     /*    void buscar(){
@@ -130,7 +134,6 @@ public class DetalleVentaVista extends javax.swing.JFrame {
     private void initComponents() {
 
         grupoAzucar = new javax.swing.ButtonGroup();
-        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jCodigoBuscar = new javax.swing.JTextField();
         buscar = new javax.swing.JButton();
@@ -140,13 +143,6 @@ public class DetalleVentaVista extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Listar / Modificar Pelicula - VideoBuster");
         setResizable(false);
-
-        jButton1.setText("Mostrar Todos");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jLabel1.setText("Código:");
 
@@ -188,9 +184,7 @@ public class DetalleVentaVista extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jCodigoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(buscar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1))
+                        .addComponent(buscar))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1385, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -203,8 +197,7 @@ public class DetalleVentaVista extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jCodigoBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buscar)
-                    .addComponent(jButton1))
+                    .addComponent(buscar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 466, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(28, Short.MAX_VALUE))
@@ -213,14 +206,9 @@ public class DetalleVentaVista extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        lista();
-        jCodigoBuscar.setText(null);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buscarActionPerformed
 
-        //buscar();
+        lista();
     }//GEN-LAST:event_buscarActionPerformed
 
     private void jCodigoBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCodigoBuscarActionPerformed
@@ -280,7 +268,6 @@ public class DetalleVentaVista extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buscar;
     private javax.swing.ButtonGroup grupoAzucar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JTextField jCodigoBuscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;
