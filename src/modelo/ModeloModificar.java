@@ -29,5 +29,11 @@ public class ModeloModificar {
         String query1="UPDATE VENTA SET RUT='"+rut+"' WHERE IDPRODUCTO="+idproducto;
         dec.executeUpdate(query1);
     }
+
+    public void modificaVenta(Integer idventa, String fechacontratacion, String fechaterminopcional, String fechaterminocontrato, Integer tipoventa, Integer valorventa, Integer rut) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
 }
    
