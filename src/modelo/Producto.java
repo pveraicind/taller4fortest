@@ -10,7 +10,7 @@ package modelo;
  * @author USUARIO
  */
 public class Producto {
-    private Integer id_producto;
+    private int id_producto;
     private String nombre_producto;
     private Integer precio;
 

@@ -58,7 +58,8 @@ public class EliminarRegistro {
       ResultSet resultado = null;
        Boolean bolita = false;
         try {
-            String query1 = "delete from relation_2v1 where id_producto="+producto.getId_producto();
+           int hola = producto.getId_producto();
+            String query1 = "delete from relation_2v1 where producto_id_producto="+hola;
             Connection test=Conexion.conectar();
             Statement dec=test.createStatement();
             resultado=dec.executeQuery(query1);
@@ -77,7 +78,7 @@ public class EliminarRegistro {
       ResultSet resultado = null;
        Boolean bolita = false;
         try {
-            String query1 = "delete from relation_2v1 where id_venta="+venta.getIdventa();
+            String query1 = "delete from relation_2v1 where venta_id_venta="+venta.getIdventa();
             Connection test=Conexion.conectar();
             Statement dec=test.createStatement();
             resultado=dec.executeQuery(query1);
@@ -90,6 +91,22 @@ public class EliminarRegistro {
         return bolita;
     
     }         
+              public Boolean eliminardetalle3(Venta venta, Producto producto){
+      ResultSet resultado = null;
+       Boolean bolita = false;
+        try {
+            String query1 = "delete from relation_2v1 where venta_id_venta="+venta.getIdventa()+" and producto_id_producto="+producto.getId_producto();
+            Connection test=Conexion.conectar();
+            Statement dec=test.createStatement();
+            resultado=dec.executeQuery(query1);
+            bolita = true;
             
+        } catch (SQLException ex) {
+            bolita = false;                        
+            Logger.getLogger(EliminarRegistro.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return bolita;
+    
+    }            
             
 }

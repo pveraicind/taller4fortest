@@ -7,6 +7,8 @@ package vista;
 
 import controlador.EliminarControlador;
 import javax.swing.ButtonGroup;
+import modelo.Producto;
+import modelo.Venta;
 
 /**
  *
@@ -66,6 +68,11 @@ public class EliminarVista extends javax.swing.JFrame {
         });
 
         elimdet.setText("Eliminar Detalle Venta");
+        elimdet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                elimdetActionPerformed(evt);
+            }
+        });
 
         jLabel3.setText("Id Venta");
 
@@ -134,7 +141,8 @@ public class EliminarVista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void elimventActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elimventActionPerformed
-        this.idprod.setEnabled(false);        // TODO add your handling code here:
+        this.idprod.setEnabled(false);
+ this.idventa.setEnabled(true);        // TODO add your handling code here:
     }//GEN-LAST:event_elimventActionPerformed
 
     private void idventaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_idventaActionPerformed
@@ -143,21 +151,42 @@ public class EliminarVista extends javax.swing.JFrame {
 
     private void elimprodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elimprodActionPerformed
       this.idventa.setEnabled(false);
+      this.idprod.setEnabled(true); 
       
     }//GEN-LAST:event_elimprodActionPerformed
 
     private void botoneliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botoneliminarActionPerformed
+         
         EliminarControlador elim = new EliminarControlador ();
-        
+        Producto producto = new Producto ();
+        Venta venta = new Venta ();
         if(this.elimprod.isSelected()){
+            producto.setId_producto(Integer.parseInt(this.idprod.getText()));
+            System.out.println(producto.getId_producto());
+            elim.eliminardet1(producto);
+           elim.eliminarprod(producto);
         
+        }else if(this.elimvent.isSelected()){
+        venta.setIdventa(Integer.parseInt(this.idventa.getText()));
+        elim.eliminardet2(venta);
+        elim.eliminarvemta(venta);
+      
+        }else if (this.elimdet.isSelected()){
         
+        producto.setId_producto(Integer.parseInt(this.idprod.getText()));
+        venta.setIdventa(Integer.parseInt(this.idventa.getText()));
+        elim.eliminardet3(venta, producto);
         
         }
             
 
         // TODO add your handling code here:
     }//GEN-LAST:event_botoneliminarActionPerformed
+
+    private void elimdetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_elimdetActionPerformed
+        this.idventa.setEnabled(true);
+        this.idprod.setEnabled(true);   
+    }//GEN-LAST:event_elimdetActionPerformed
 
     /**
      * @param args the command line arguments
