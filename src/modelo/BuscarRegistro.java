@@ -56,14 +56,14 @@ public class BuscarRegistro {
             ResultSet resultado = null;
             int eje = 0;
             
-            String query3 = "select id_producto from producto ";
+            String query3 = "select idproducto from producto ";
             Connection test=Conexion.conectar();
             Statement dec=test.createStatement();
             resultado=dec.executeQuery(query3);
             
             while (resultado.next() && eje ==0){
-                int id2 = resultado.getInt("id_producto");
-                if (id2 == producto.getId_producto()){
+                int id2 = resultado.getInt("idproducto");
+                if (id2 == producto.getIdproducto()){
                     estado = true;
                     eje = 1;
                 }
@@ -77,6 +77,10 @@ public class BuscarRegistro {
         return estado;
     
     
+    }
+
+    public void setVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

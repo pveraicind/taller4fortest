@@ -23,6 +23,10 @@ public class ControladorAgrega {
         modeloAgrega=new ModeloAgrega();
         modeloAgrega.agregaVenta(idventa,fechacontratacion,fechaterminopcional,fechaterminocontrato,tipoventa, valorventa,rut );
     }
+
+    public void agregaVenta(Integer idventa, String fechacontratacion, String fechaterminopcional, String fechaterminocontrato, Integer tipoventa, Integer valorventa, String rut) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }  
     
