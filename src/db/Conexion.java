@@ -8,6 +8,7 @@ package db;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
@@ -15,6 +16,10 @@ import java.sql.SQLException;
  */
 public class Conexion {
     public static Connection conect;
+
+    public static Statement createStatement() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     private Conexion() {
     }

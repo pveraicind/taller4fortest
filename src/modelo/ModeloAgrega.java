@@ -5,34 +5,35 @@
  */
 package modelo;
 
-import Conexion.Conexion;
+import db.Conexion;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+
 /**
  *
- * @author Gabriel
+ * @author Daniela
  */
 public class ModeloAgrega {
-    //private ArrayList<Curso> cursos;
+    //private ArrayList<>
     private Producto producto;
     
-    public void agregaProducto(int codigo, int precio, int id_cat, String formato4k, String nombre) throws SQLException{
-        System.out.println("Insertar registro...");
+    public void agregaProducto(Integer idproducto, String nombreproducto, Integer precio) throws SQLException{
+        System.out.println("Insertar producto...");
         Statement dec;
-        dec=Conexion.conexion.createStatement();
-        String query1="insert into A_PELICULA (CODIGO, PRECIO, ID_CAT, FORMATO4K, NOMBRE) VALUES ("+codigo+", '"+precio+"', '"+id_cat+"', '"+formato4k+"', '"+nombre+"')";
+        dec=db.Conexion.createStatement();
+        String query1="insert into PRODUCTO (IDPRODUCTO, NOMBREPRODUCTO, PRECIO) VALUES ("+idproducto+", '"+nombreproducto+"', '"+precio+"')";
         dec.executeUpdate(query1);
         
     }
     
-    public void agregaCategoria(int id_cat, String descripcion) throws SQLException{
-        System.out.println("Insertar registro...");
+    public void agregaVenta(Integer idventa,String fechacontratacion,String fechaterminopcional,String fechaterminocontrato,Integer tipoventa, Integer valorventa,Integer rut  ) throws SQLException{
+        System.out.println("Agregar Venta...");
         Statement dec;
-        dec=Conexion.conexion.createStatement();
-        String query1="insert into A_CATEGORIA (ID_CAT, DESCRIPCION) VALUES ("+id_cat+", '"+descripcion+"')";
+        dec=db.Conexion.createStatement();
+        String query1="insert into VENTA (IDVENTA, FECHACONTRATACION, FECHATERMINOOPCIONAL, FECHATERMINOCONTRATO, TIPOVENTA,VALORVENTA, RUT ) VALUES ("+idventa+", '"+fechacontratacion+"', '"+fechaterminopcional+"', '"+fechaterminocontrato+"', '"+tipoventa+"', '"+rut+"')";
         dec.executeUpdate(query1);
+     
         
     }
-    
 }
