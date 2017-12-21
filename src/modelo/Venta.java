@@ -21,6 +21,22 @@ public class Venta {
     private String nombretipo;
     private String nombreproducto;
 
+    public String getNombretipo() {
+        return nombretipo;
+    }
+
+    public void setNombretipo(String nombretipo) {
+        this.nombretipo = nombretipo;
+    }
+
+    public String getNombreproducto() {
+        return nombreproducto;
+    }
+
+    public void setNombreproducto(String nombreproducto) {
+        this.nombreproducto = nombreproducto;
+    }
+
     public int getIdventa() {
         return idventa;
     }

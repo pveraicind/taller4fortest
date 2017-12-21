@@ -5,7 +5,7 @@
  */
 package modelo;
 
-import Conexion.Conexion;
+import db.Conexion;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
