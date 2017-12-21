@@ -153,35 +153,7 @@ public class Venta {
         this.rut = rut;
     }
 
-    /**
-     * @return the nombretipo
-     */
-    public String getNombretipo() {
-        return nombretipo;
-    }
 
-    /**
-     * @param nombretipo the nombretipo to set
-     */
-    public void setNombretipo(String nombretipo) {
-        this.nombretipo = nombretipo;
-    }
-
-    /**
-     * @return the nombreproducto
-     */
-    public String getNombreproducto() {
-        return nombreproducto;
-    }
-
-    /**
-     * @param nombreproducto the nombreproducto to set
-     */
-    public void setNombreproducto(String nombreproducto) {
-        this.nombreproducto = nombreproducto;
-    }
-  
-    
     
     
 }
