@@ -45,7 +45,7 @@ public class EliminarRegistro {
       ResultSet resultado = null;
        Boolean bolita = false;
         try {
-            String query1 = "delete from producto where id_producto="+producto.getId_producto();
+            String query1 = "delete from producto where id_producto="+producto.getIdproducto();
             Connection test=Conexion.conectar();
             Statement dec=test.createStatement();
             resultado=dec.executeQuery(query1);
@@ -99,7 +99,7 @@ public class EliminarRegistro {
       ResultSet resultado = null;
        Boolean bolita = false;
         try {
-            String query1 = "delete from relation_2v1 where venta_id_venta="+venta.getIdventa()+" and producto_id_producto="+producto.getId_producto();
+            String query1 = "delete from relation_2v1 where venta_id_venta="+venta.getIdventa()+" and producto_id_producto="+producto.getIdproducto();
             Connection test=Conexion.conectar();
             Statement dec=test.createStatement();
             resultado=dec.executeQuery(query1);

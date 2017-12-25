@@ -163,9 +163,11 @@ public class AgregaProducto extends javax.swing.JFrame {
 
             }
             Integer idproducto=new Integer(jTextFieldIDProd.getText());
+            System.out.println(idproducto);
             String nombreproducto=jTextFieldNombre.getText();
+            System.out.println(nombreproducto);
             Integer precio=new Integer(jTextFieldPrecio.getText());
-            
+            System.out.println(precio);
             
             ControladorAgrega controladorAgrega = new ControladorAgrega();
 

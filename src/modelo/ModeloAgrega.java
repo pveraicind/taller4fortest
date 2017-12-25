@@ -6,9 +6,14 @@
 package modelo;
 
 import db.Conexion;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -16,23 +21,32 @@ import java.util.ArrayList;
  */
 public class ModeloAgrega {
     //private ArrayList<>
-    private Producto producto;
+
     
-    public void agregaProducto(Integer idproducto, String nombreproducto, Integer precio) throws SQLException{
-        System.out.println("Insertar producto...");
-        Statement dec;
-        dec=db.Conexion.createStatement();
-        String query1="insert into PRODUCTO (IDPRODUCTO, NOMBREPRODUCTO, PRECIO) VALUES ("+idproducto+", '"+nombreproducto+"', '"+precio+"')";
-        dec.executeUpdate(query1);
-        
+    public void agregaProducto(Integer idproducto, String nombreproducto, Integer precio) {
+    
+                    
+        try {
+            Connection test=Conexion.conectar();
+            Statement s=test.createStatement();
+            String query23="insert into PRODUCTO(ID_PRODUCTO, NOMBRE_PRODUTO, PRECIO) VALUES ("+idproducto+", '"+nombreproducto+"', '"+precio+"')";
+            s.executeUpdate(query23);
+        } catch (SQLException ex) {
+            Logger.getLogger(ModeloAgrega.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+  
+
+
+
     }
     
     public void agregaVenta(Integer idventa,String fechacontratacion,String fechaterminopcional,String fechaterminocontrato,Integer tipoventa, Integer valorventa,Integer rut  ) throws SQLException{
         System.out.println("Agregar Venta...");
         Statement dec;
-        dec=db.Conexion.createStatement();
+       
         String query1="insert into VENTA (IDVENTA, FECHACONTRATACION, FECHATERMINOOPCIONAL, FECHATERMINOCONTRATO, TIPOVENTA,VALORVENTA, RUT ) VALUES ("+idventa+", '"+fechacontratacion+"', '"+fechaterminopcional+"', '"+fechaterminocontrato+"', '"+tipoventa+"', '"+rut+"')";
-        dec.executeUpdate(query1);
+       
      
         
     }

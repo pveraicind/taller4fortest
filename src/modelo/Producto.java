@@ -27,6 +27,7 @@ public class Producto {
         return idproducto;
     }
 
+
     public void setIdproducto(Integer idproducto) {
         this.idproducto = idproducto;
     }
@@ -47,9 +48,7 @@ public class Producto {
         this.precio = precio;
     }
 
-    String getId_producto() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+}
+ 
 
-    }
  

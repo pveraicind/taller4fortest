@@ -160,6 +160,44 @@ public class ListarModelo {
         return list;
     }    
 
+     public ArrayList listarproducto(){
+         
+        ResultSet resultSet = null;
+        int idproducto;
+    String nombre;
+    int precio;
+    
+        
+        
+        ArrayList <Producto> list = new ArrayList<>();
+        String sql="SELECT id_producto, nombre_produto, precio from producto";
+        try {
+            
+            PreparedStatement preparedStatement = Conexion.conectar().prepareStatement(sql);
+            resultSet = preparedStatement.executeQuery();        
+            
+            while (resultSet.next()) {
+                idproducto=resultSet.getInt(1);
+                nombre=resultSet.getString(2);
+                precio=resultSet.getInt(3);
+
+                
+                
+                Producto producto = new Producto(idproducto, nombre, precio);
+                list.add(producto);
+            }
+            
+            
+        } catch (SQLException ex) {
+            
+        }        
+        
+        
+        
+        return list;
+    }    
+    
+    
     public void setVisible(boolean b) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
